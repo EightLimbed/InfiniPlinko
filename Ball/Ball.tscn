@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0uoscoax8uxu"]
+
+[ext_resource type="Script" uid="uid://b4lvipp8mah5s" path="res://Ball/Ball.gd" id="1_cfgdn"]
+[ext_resource type="SpriteFrames" uid="uid://dcsacu0tdxb40" path="res://Ball/GolfBall/GolfBallFrames.tres" id="1_ov5dl"]
+
+[node name="Ball" type="AnimatedSprite2D"]
+sprite_frames = ExtResource("1_ov5dl")
+animation = &"Left"
+script = ExtResource("1_cfgdn")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
