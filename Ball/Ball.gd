@@ -13,16 +13,20 @@ func right():
 	play("Right")
 
 func _on_animation_finished() -> void:
-	if random.randi_range(0,10) != 0:
-		speed_scale += 0.1
-	else:
-		speed_scale /= 2.0
-	if get_animation() == "Right":
-		position.x += 64
-	if get_animation() == "Left":
-		position.x -= 64
-	position.y += 64
+	position.y += 80
 	if random.randi_range(0,1) == 1:
+		if get_animation() == "Right":
+			position.x += 80
+			speed_scale /= 1.08
+		if get_animation() == "Left":
+			if speed_scale < 4: speed_scale *= 1.1
+			position.x -= 80
 		left()
 	else:
+		if get_animation() == "Right":
+			if speed_scale < 4: speed_scale *= 1.1
+			position.x += 80
+		if get_animation() == "Left":
+			speed_scale /= 1.08
+			position.x -= 80
 		right()

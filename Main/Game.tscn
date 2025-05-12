@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1b08f1mpsqqw"]
+[gd_scene load_steps=3 format=3 uid="uid://c1b08f1mpsqqw"]
 
 [ext_resource type="PackedScene" uid="uid://c0uoscoax8uxu" path="res://Ball/Ball.tscn" id="1_gdh3y"]
+[ext_resource type="PackedScene" uid="uid://cppux85ja6g5i" path="res://Background/Background.tscn" id="2_mydax"]
 
 [node name="Game" type="Node2D"]
 
 [node name="Ball" parent="." instance=ExtResource("1_gdh3y")]
-position = Vector2(516, 55)
+
+[node name="Background" parent="." instance=ExtResource("2_mydax")]

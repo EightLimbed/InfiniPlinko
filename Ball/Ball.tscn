@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b4lvipp8mah5s" path="res://Ball/Ball.gd" id="1_cfgdn"]
 [ext_resource type="SpriteFrames" uid="uid://dcsacu0tdxb40" path="res://Ball/GolfBall/GolfBallFrames.tres" id="1_ov5dl"]
-[ext_resource type="Texture2D" uid="uid://cxwm3p2l6tdtd" path="res://Ball/GolfBall/Pegs.png" id="3_lwqi0"]
+[ext_resource type="Texture2D" uid="uid://beoppwroo14qg" path="res://Ball/GolfBall/Pegs.png" id="3_lwqi0"]
 
 [node name="Ball" type="AnimatedSprite2D"]
 sprite_frames = ExtResource("1_ov5dl")
@@ -15,19 +15,37 @@ position_smoothing_speed = 10.0
 
 [node name="Pegs" type="TextureRect" parent="."]
 show_behind_parent = true
-custom_minimum_size = Vector2(1344, 960)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -768.0
-offset_top = -608.0
-offset_right = 576.0
-offset_bottom = 352.0
+offset_left = -820.0
+offset_top = -588.0
+offset_right = 620.0
+offset_bottom = 380.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_lwqi0")
 stretch_mode = 1
+
+[node name="Pegs2" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 0.215686)
+show_behind_parent = true
+z_index = -1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -892.0
+offset_top = -588.0
+offset_right = 548.0
+offset_bottom = 380.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_lwqi0")
+stretch_mode = 1
+flip_h = true
 
 [connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
