@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://dissab0qwopc"]
+
+[ext_resource type="Script" uid="uid://378mqocfavv5" path="res://PriceChanger/PriceChanger.gd" id="1_qvhpi"]
+[ext_resource type="Texture2D" uid="uid://dqgesvoh7m54h" path="res://PriceChanger/PriceChanger.png" id="2_gm44r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fij16"]
+size = Vector2(160, 160)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gm44r"]
+font_size = 32
+
+[node name="PriceChanger" type="Area2D"]
+script = ExtResource("1_qvhpi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-85, -50)
+shape = SubResource("RectangleShape2D_fij16")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 0, 0.784314)
+texture = ExtResource("2_gm44r")
+offset = Vector2(-85, -50)
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(160, 160)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.0
+offset_top = -130.0
+offset_right = -5.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10"
+label_settings = SubResource("LabelSettings_gm44r")
+horizontal_alignment = 1
+vertical_alignment = 1
