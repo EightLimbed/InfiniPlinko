@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c0uoscoax8uxu"]
+[gd_scene load_steps=5 format=3 uid="uid://c0uoscoax8uxu"]
 
 [ext_resource type="Script" uid="uid://b4lvipp8mah5s" path="res://Ball/Ball.gd" id="1_cfgdn"]
 [ext_resource type="SpriteFrames" uid="uid://dcsacu0tdxb40" path="res://Ball/GolfBall/GolfBallFrames.tres" id="1_ov5dl"]
 [ext_resource type="Texture2D" uid="uid://beoppwroo14qg" path="res://Ball/GolfBall/Pegs.png" id="3_lwqi0"]
-[ext_resource type="PackedScene" uid="uid://dissab0qwopc" path="res://PriceChanger/PriceChanger.tscn" id="4_hgk86"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lwqi0"]
 size = Vector2(64, 64)
@@ -12,10 +11,6 @@ size = Vector2(64, 64)
 sprite_frames = ExtResource("1_ov5dl")
 animation = &"Right"
 script = ExtResource("1_cfgdn")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0
 
 [node name="Pegs" type="TextureRect" parent="."]
 show_behind_parent = true
@@ -57,6 +52,8 @@ flip_h = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_lwqi0")
 
-[node name="PriceChanger" parent="." instance=ExtResource("4_hgk86")]
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
 
 [connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
