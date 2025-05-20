@@ -8,7 +8,7 @@ func _ready():
 
 func gen_triangle(pos):
 	for j in 20:
-		var layer = $Ball.position.y+j*96-pos.y
+		var layer = pos.y+j*96-pos.y
 		if int(layer) % 192 == 0 or layer == 0:
 			for i in 1+(layer)/96:
 				if random.randi_range(0,0) == 0:

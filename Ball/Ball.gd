@@ -23,16 +23,16 @@ func pregenerate():
 		premoves.append(next)
 
 func _on_animation_finished() -> void:
-	if int(position.y) % 1920 == 0:
-		index = 0
-		pregenerate()
 	var previous = get_animation()
 	if previous == "Right":
 		position.x += 96
 	else:
 		position.x -= 96
-	var next = premoves[index]
 	position.y += 96
+	if int(position.y) % 1920 == 0:
+		index = 0
+		pregenerate()
+	var next = premoves[index]
 	if previous == next:
 		if speed_scale < 4.0: speed_scale *=1.06
 	else:
