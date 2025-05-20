@@ -2,6 +2,7 @@ extends Node2D
 
 var price_changer : PackedScene = preload("res://PriceChanger/PriceChanger.tscn")
 var random = RandomNumberGenerator.new()
+var reset_offset : Vector2 = Vector2.ZERO
 
 func _on_ball_animation_finished() -> void:
 	var layer = $Ball.position.y

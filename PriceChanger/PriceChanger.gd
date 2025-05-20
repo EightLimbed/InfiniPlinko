@@ -6,15 +6,16 @@ extends Area2D
 #Ranges between /10 and *10 (/10 in middles, *10 in outside). gradiant depends on layer of pascals triangle.
 func _ready():
 	var new_pos = position/Vector2(192,96)
+	print(new_pos.y)
 	value = val_from_pos(new_pos)
 	if value < 1:
-		$Label.text = "÷"+str(round(1.0/value*100.0)/100)
+		$Label.text = "÷"+str(round(1.0/value*100.0)/100.0)
 		$Sprite2D.modulate = "ff0000c8"
 	elif value == 1:
 		$Label.text = "×1"
 		$Sprite2D.modulate = "ffff00c8"
 	else:
-		$Label.text = "×"+str(round(value*100.0)/100)
+		$Label.text = "×"+str(round(value*100.0)/100.0)
 		$Sprite2D.modulate = "00ff00c8"
 	#print(str(value)+" "+str(new_pos))
 
