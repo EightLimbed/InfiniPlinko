@@ -31,6 +31,11 @@ func factorial(num : int):
 	return result
 
 func _on_area_entered(area: Area2D) -> void:
-	pass
-	#area.get_parent().value *= value
-	#queue_free()
+	var target = area.get_parent()
+	var new_value = target.value * value
+	if new_value < 0.00000000000001:
+		target.value = 0.00000000000001
+	else:
+		target.value = new_value
+	print(area.get_parent().value)
+	queue_free()

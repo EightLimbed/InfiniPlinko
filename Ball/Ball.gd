@@ -2,7 +2,7 @@ extends AnimatedSprite2D
 
 var random = RandomNumberGenerator.new()
 var speed : int = 0
-var value : int = 100
+var value : float = 100.0
 var premoves : Array = []
 var end_pos : Vector2 = Vector2.ZERO
 var index : int = 0
