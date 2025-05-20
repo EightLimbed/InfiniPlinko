@@ -1,12 +1,12 @@
 extends Area2D
 
-@export var value : float = 1
+var value : float = 1
+var offset
 
 #make sure to only place multipliers every second row.
 #Ranges between /10 and *10 (/10 in middles, *10 in outside). gradiant depends on layer of pascals triangle.
 func _ready():
-	var new_pos = position/Vector2(192,96)
-	print(new_pos.y)
+	var new_pos = (position-offset)/Vector2(192,96)
 	value = val_from_pos(new_pos)
 	if value < 1:
 		$Label.text = "÷"+str(round(1.0/value*100.0)/100.0)
@@ -17,7 +17,6 @@ func _ready():
 	else:
 		$Label.text = "×"+str(round(value*100.0)/100.0)
 		$Sprite2D.modulate = "00ff00c8"
-	#print(str(value)+" "+str(new_pos))
 
 func val_from_pos(pos):
 	return (nCr(pos.y,abs(pos.x))**1.8)/(nCr(pos.y,abs(pos.x)+(pos.y/2.0))**0.9)
@@ -30,3 +29,8 @@ func factorial(num : int):
 	for i in range(1, num+1):
 		result *= i
 	return result
+
+func _on_area_entered(area: Area2D) -> void:
+	pass
+	#area.get_parent().value *= value
+	#queue_free()

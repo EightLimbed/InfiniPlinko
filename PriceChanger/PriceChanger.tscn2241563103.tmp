@@ -12,6 +12,7 @@ font_size = 32
 [node name="PriceChanger" type="Area2D"]
 z_index = -2
 script = ExtResource("1_qvhpi")
+value = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5, -32)
