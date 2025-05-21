@@ -15,6 +15,11 @@ run/main_scene="uid://c1b08f1mpsqqw"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_height"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

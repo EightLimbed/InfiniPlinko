@@ -18,8 +18,15 @@ func _ready():
 		$Label.text = "×"+str(round(value*100.0)/100.0)
 		$Sprite2D.modulate = "00ff00c8"
 
+func _process(delta: float) -> void:
+	var factor = min(1,80.0/$Label.size.x)
+	$Label.scale = Vector2(factor,factor)
+	$Label.position = Vector2(-45,-72)
+	if position.y > offset.y + 1920:
+		queue_free()
+
 func val_from_pos(pos):
-	return (nCr(pos.y,abs(pos.x))**1.8)/(nCr(pos.y,abs(pos.x)+(pos.y/2.0))**0.9)
+	return (nCr(pos.y,abs(pos.x))**1.9/(nCr(pos.y,abs(pos.x)+(pos.y/2.0))**0.9))
 
 func nCr(n, r) -> float:
 	return factorial(n) / (factorial(r) * factorial(n - r))
@@ -33,9 +40,6 @@ func factorial(num : int):
 func _on_area_entered(area: Area2D) -> void:
 	var target = area.get_parent()
 	var new_value = target.value * value
-	if new_value < 0.00000000000001:
-		target.value = 0.00000000000001
-	else:
-		target.value = new_value
-	print(area.get_parent().value)
+	target.value = new_value
+	#print(area.get_parent().value)
 	queue_free()
