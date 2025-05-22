@@ -19,7 +19,7 @@ func _ready():
 		$Label.text = "×"+str(round(value*100.0)/100.0)
 		$Sprite2D.modulate = "00ff00c8"
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var factor = min(1,70.0/$Label.size.x)
 	$Label.scale = Vector2(factor,factor)
 	$Label.position = Vector2(-40,-67)
@@ -42,10 +42,9 @@ func factorial(num : int):
 func _on_area_entered(area: Area2D) -> void:
 	var target = area.get_parent()
 	var new_value = target.value * value
-	if new_value < 0.00000000000001:
-		new_value = 0.00000000000001
-	elif new_value > 100000000000000:
-		new_value = 100000000000000
+	if new_value < 5:
+		get_parent().get_node("CanvasLayer/Money").text = "Money: $"+str(new_value)
+	else:
+		get_parent().get_node("CanvasLayer/Money").text = "Money: $"+str(round(new_value))
 	target.value = new_value
-	print(area.get_parent().value)
 	queue_free()

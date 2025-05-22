@@ -1,0 +1,151 @@
+[gd_scene load_steps=7 format=3 uid="uid://dcbiwpsxsuipw"]
+
+[ext_resource type="Script" uid="uid://ckpogh1goykuc" path="res://MainMenu/Menu.gd" id="1_jefjr"]
+[ext_resource type="Texture2D" uid="uid://beoppwroo14qg" path="res://Ball/GolfBall/Pegs.png" id="1_nuv2b"]
+[ext_resource type="Texture2D" uid="uid://ce7gplxnp5o82" path="res://Background/Background1.png" id="2_o5td3"]
+[ext_resource type="Theme" uid="uid://cotiscxf60nq3" path="res://MainMenu/Menu.tres" id="4_gtolh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jefjr"]
+font_size = 96
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_o5td3"]
+font_size = 32
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_gtolh")
+script = ExtResource("1_jefjr")
+
+[node name="Pegs" type="TextureRect" parent="."]
+show_behind_parent = true
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -709.0
+offset_top = -498.0
+offset_right = 731.0
+offset_bottom = 470.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_nuv2b")
+stretch_mode = 1
+
+[node name="Pegs2" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 0.215686)
+show_behind_parent = true
+z_index = -1
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -781.0
+offset_top = -498.0
+offset_right = 659.0
+offset_bottom = 470.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_nuv2b")
+stretch_mode = 1
+flip_h = true
+
+[node name="Background" type="TextureRect" parent="."]
+z_index = -100
+offset_right = 576.0
+offset_bottom = 576.0
+scale = Vector2(2, 2)
+texture = ExtResource("2_o5td3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -324.0
+offset_right = 128.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "INFINITE PLINKO"
+label_settings = SubResource("LabelSettings_jefjr")
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+text = "Bet Amount"
+label_settings = SubResource("LabelSettings_o5td3")
+horizontal_alignment = 1
+
+[node name="TextEdit" type="LineEdit" parent="VBoxContainer/Label3"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -48.0
+offset_right = 128.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("4_gtolh")
+placeholder_text = "Enter Amount to Bet..."
+alignment = 1
+max_length = 22
+context_menu_enabled = false
+emoji_menu_enabled = false
+virtual_keyboard_enabled = false
+virtual_keyboard_type = 2
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+text = "Risk Slider"
+label_settings = SubResource("LabelSettings_o5td3")
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/Label2"]
+custom_minimum_size = Vector2(256, 12)
+layout_mode = 2
+offset_left = 259.0
+offset_top = 48.0
+offset_right = 515.0
+offset_bottom = 64.0
+size_flags_horizontal = 4
+min_value = 1.0
+max_value = 5.0
+value = 1.0
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(256, 96)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("4_gtolh")
+text = "Play"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

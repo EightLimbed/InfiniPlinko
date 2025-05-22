@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3ue7jra32mvf"]
+
+[ext_resource type="Theme" uid="uid://cotiscxf60nq3" path="res://MainMenu/Menu.tres" id="1_ceuxv"]
+[ext_resource type="Script" uid="uid://dkg1sbtm1hryf" path="res://MainMenu/WinScreen.gd" id="2_ceuxv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jefjr"]
+font_size = 96
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_o5td3"]
+font_size = 32
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[node name="WinScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ceuxv")
+script = ExtResource("2_ceuxv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1152, 648)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.392157, 0.392157, 0.392157, 0.501961)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -324.0
+offset_right = 128.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Round Over"
+label_settings = SubResource("LabelSettings_jefjr")
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "You Won:"
+label_settings = SubResource("LabelSettings_o5td3")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(256, 96)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Main Menu"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
