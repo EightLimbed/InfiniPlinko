@@ -28,7 +28,7 @@ func _process(delta: float) -> void:
 		print("DEATH ")
 
 func val_from_pos(pos):
-	return (nCr(pos.y,(abs(abs(pos.x)-(pos.y+1)*(sign(pos.x)+1)/2))-0.5)**1.9/(nCr(pos.y,abs(pos.x)+(pos.y/2.0))**0.9))
+	return nCr(pos.y,(abs(abs(pos.x)-(pos.y+1)*(sign(pos.x)+1)/2))-0.5)**2/(nCr(pos.y,abs(pos.x)+(pos.y/2.0)))
 
 func nCr(n, r) -> float:
 	return factorial(n) / (factorial(r) * factorial(n - r))
