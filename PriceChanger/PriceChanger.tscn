@@ -7,7 +7,9 @@
 size = Vector2(80, 80)
 
 [sub_resource type="LabelSettings" id="LabelSettings_gm44r"]
-font_size = 32
+font_size = 64
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
 
 [node name="PriceChanger" type="Area2D"]
 z_index = -2
@@ -43,4 +45,8 @@ label_settings = SubResource("LabelSettings_gm44r")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-517, -544, 1024, 1024)
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

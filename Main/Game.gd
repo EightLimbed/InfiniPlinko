@@ -4,6 +4,7 @@ var price_changer : PackedScene = preload("res://PriceChanger/PriceChanger.tscn"
 var random = RandomNumberGenerator.new()
 var risk : int
 var bet : float
+var loss : int = 1
 
 func _ready():
 	$CanvasLayer/WinScreen.hide()

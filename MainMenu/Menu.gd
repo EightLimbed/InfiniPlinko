@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 func _on_button_pressed() -> void:
 	if str($VBoxContainer/Label3/TextEdit.text).is_valid_int():

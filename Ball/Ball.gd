@@ -12,7 +12,7 @@ func _ready() -> void:
 	pregenerate()
 	play(premoves[0])
 	value = get_parent().bet
-	bounces = min(value,1000)
+	bounces = min(max(32,round(value/2)),999)
 	get_parent().get_node("CanvasLayer/Money").text = "Money: $"+str(value)
 	get_parent().get_node("CanvasLayer/Bounces").text = "Bounces: "+str(bounces)
 
@@ -47,8 +47,5 @@ func _on_animation_finished() -> void:
 	bounces -= 1
 	get_parent().get_node("CanvasLayer/Bounces").text = "Bounces: "+str(bounces)
 	if bounces <= 0:
-		get_parent().get_node("CanvasLayer/WinScreen").win(value)
-		stop()
-	if value < 0.00000000000001:
 		get_parent().get_node("CanvasLayer/WinScreen").win(value)
 		stop()
