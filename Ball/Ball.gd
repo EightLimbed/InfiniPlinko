@@ -48,4 +48,6 @@ func _on_animation_finished() -> void:
 	get_parent().get_node("CanvasLayer/Bounces").text = "Bounces: "+str(bounces)
 	if bounces <= 0:
 		get_parent().get_node("CanvasLayer/WinScreen").win(value)
+		get_parent().get_node("CanvasLayer/Money").hide()
+		get_parent().get_node("CanvasLayer/Bounces").hide()
 		stop()

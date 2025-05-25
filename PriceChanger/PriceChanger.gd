@@ -9,7 +9,7 @@ var offset
 func _ready():
 	var new_pos = (position-offset)/Vector2(192,96)
 	value = val_from_pos(new_pos)
-	if round(value*100.0)/100.0 == 0:
+	if round(value*10.0)/10.0 == 0:
 		value = 0
 	if value == 0:
 		$Label.text = "+1 \nBounces"
@@ -47,7 +47,6 @@ func _on_area_entered(area: Area2D) -> void:
 	if value == 0:
 		target.bounces += 1
 	queue_free()
-
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	queue_free()
