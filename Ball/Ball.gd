@@ -39,7 +39,7 @@ func _on_animation_finished() -> void:
 		pregenerate()
 	var next = premoves[index]
 	if previous == next:
-		if speed_scale < 4.0: speed_scale *=1.06
+		if speed_scale < 4.0: speed_scale *=1.08
 	else:
 		speed_scale /= 1.05
 	play(next)
