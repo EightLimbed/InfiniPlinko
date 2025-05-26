@@ -83,22 +83,6 @@ layout_mode = 2
 text = "INFINITE PLINKO"
 label_settings = SubResource("LabelSettings_jefjr")
 
-[node name="LinkButton" type="LinkButton" parent="VBoxContainer/Label"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -91.5
-offset_top = -20.0
-offset_right = 91.5
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Desmos Demonstration"
-uri = "https://www.desmos.com/calculator/c0lv2gkwwe"
-
 [node name="Label3" type="Label" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 96)
 layout_mode = 2
@@ -158,17 +142,18 @@ text = "Play"
 
 [node name="Info" type="ColorRect" parent="."]
 visible = false
-offset_left = 188.0
+offset_left = 31.0
 offset_top = 112.0
-offset_right = 966.0
+offset_right = 1123.0
 offset_bottom = 610.0
 color = Color(0.273873, 0.273873, 0.273873, 1)
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Info"]
+layout_mode = 0
 offset_left = 45.0
 offset_top = 26.0
-offset_right = 494.0
-offset_bottom = 66.0
+offset_right = 373.0
+offset_bottom = 426.0
 theme_override_constants/separation = 32
 
 [node name="Label" type="RichTextLabel" parent="Info/VBoxContainer2"]
@@ -181,7 +166,10 @@ fit_content = true
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 0
 text = "Step 1
-Place a bet, for every 100 (higher bets will have higher possible rewards)
+Place a bet
+1 Token = 10$
+2$ = 1 Bounce
+ (higher bets will have higher additives and therefore higher possible rewards)
 
 Step 2 
 Choose your risk (higher risk = more additives)
@@ -189,5 +177,35 @@ Choose your risk (higher risk = more additives)
 Step 3
 Press play and test your luck!"
 fit_content = true
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Info"]
+layout_mode = 0
+offset_left = 462.0
+offset_top = 26.0
+offset_right = 911.0
+offset_bottom = 403.0
+theme_override_constants/separation = 32
+
+[node name="Label" type="RichTextLabel" parent="Info/VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "Your Chances"
+fit_content = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Info/VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 0
+text = "Example: 
+Bet amount = $20
+Tokens Spent = 2
+# of bounces = 10
+
+MAX WIN = "
+fit_content = true
+
+[node name="LinkButton" type="LinkButton" parent="Info/VBoxContainer3"]
+layout_mode = 2
+text = "Desmos Demonstration"
+uri = "https://www.desmos.com/calculator/c0lv2gkwwe"
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
