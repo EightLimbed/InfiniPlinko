@@ -141,7 +141,6 @@ theme = ExtResource("4_gtolh")
 text = "Play"
 
 [node name="Info" type="ColorRect" parent="."]
-visible = false
 offset_left = 31.0
 offset_top = 112.0
 offset_right = 1123.0
@@ -206,6 +205,6 @@ fit_content = true
 [node name="LinkButton" type="LinkButton" parent="Info/VBoxContainer3"]
 layout_mode = 2
 text = "Desmos Demonstration"
-uri = "https://www.desmos.com/calculator/c0lv2gkwwe"
+uri = "https://www.desmos.com/calculator/ybqo64kkp4"
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
