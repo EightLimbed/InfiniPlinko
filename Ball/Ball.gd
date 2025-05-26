@@ -12,7 +12,7 @@ func _ready() -> void:
 	pregenerate()
 	play(premoves[0])
 	value = get_parent().bet
-	bounces = min(max(32,round(value/2)),999)
+	bounces = min(max(16,round(value/2)),999)
 	get_parent().get_node("CanvasLayer/Money").text = "Money: $"+str(value)
 	get_parent().get_node("CanvasLayer/Bounces").text = "Bounces: "+str(bounces)
 

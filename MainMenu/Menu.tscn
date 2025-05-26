@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dcbiwpsxsuipw"]
+[gd_scene load_steps=8 format=3 uid="uid://dcbiwpsxsuipw"]
 
 [ext_resource type="Script" uid="uid://ckpogh1goykuc" path="res://MainMenu/Menu.gd" id="1_jefjr"]
 [ext_resource type="Texture2D" uid="uid://beoppwroo14qg" path="res://Ball/GolfBall/Pegs.png" id="1_nuv2b"]
 [ext_resource type="Texture2D" uid="uid://ce7gplxnp5o82" path="res://Background/Background1.png" id="2_o5td3"]
 [ext_resource type="Theme" uid="uid://cotiscxf60nq3" path="res://MainMenu/Menu.tres" id="4_gtolh"]
+[ext_resource type="Texture2D" uid="uid://eqolf1s7w4sa" path="res://InfoGraphics/Graph.png" id="5_mbskr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jefjr"]
 font_size = 96
@@ -149,10 +150,10 @@ color = Color(0.273873, 0.273873, 0.273873, 1)
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Info"]
 layout_mode = 0
-offset_left = 45.0
-offset_top = 26.0
-offset_right = 373.0
-offset_bottom = 426.0
+offset_left = 7.0
+offset_top = -2.0
+offset_right = 335.0
+offset_bottom = 490.0
 theme_override_constants/separation = 32
 
 [node name="Label" type="RichTextLabel" parent="Info/VBoxContainer2"]
@@ -167,11 +168,15 @@ theme_override_font_sizes/normal_font_size = 0
 text = "Step 1
 Place a bet
 1 Token = 10$
-2$ = 1 Bounce
+2$ = 1 Bounce (minimum of 16)
+
  (higher bets will have higher additives and therefore higher possible rewards)
 
+[Disclaimer: you can end up losing more than you initally bet]
+
 Step 2 
-Choose your risk (higher risk = more additives)
+Choose your risk
+ (higher risk = more common additives)
 
 Step 3
 Press play and test your luck!"
@@ -179,10 +184,10 @@ fit_content = true
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="Info"]
 layout_mode = 0
-offset_left = 462.0
-offset_top = 26.0
-offset_right = 911.0
-offset_bottom = 403.0
+offset_left = 428.0
+offset_top = 14.0
+offset_right = 1096.0
+offset_bottom = 515.0
 theme_override_constants/separation = 32
 
 [node name="Label" type="RichTextLabel" parent="Info/VBoxContainer3"]
@@ -195,16 +200,42 @@ fit_content = true
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 0
 text = "Example: 
-Bet amount = $20
-Tokens Spent = 2
-# of bounces = 10
+Bet amount = $40
+Tokens Spent = 4
+# of bounces = 20
 
-MAX WIN = "
+
+MAX WIN = $2,511,900 (+250,7000 Net Tokens)
+MAX LOSS = -171 (-14 Net Tokens)
+Theorectical expected value = $39.375
+
+Calculations:
+[MAX WIN = -0.03125+40+180+680+2500+9220+34300+129000+486000+1850000]
+[MAX LOSS = -0.03125-13-18.-19.428-19.841-19.956-19.9883-19.996-19.999-19.999]
+[Expected value = 40 - 0.0625(average loss) * 10 (Amount of additives in 20 bounces)]"
 fit_content = true
 
 [node name="LinkButton" type="LinkButton" parent="Info/VBoxContainer3"]
 layout_mode = 2
 text = "Desmos Demonstration"
 uri = "https://www.desmos.com/calculator/ybqo64kkp4"
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="Info"]
+layout_mode = 0
+offset_left = 468.0
+offset_top = 14.0
+offset_right = 1136.0
+offset_bottom = 515.0
+theme_override_constants/separation = 32
+
+[node name="TextureRect" type="TextureRect" parent="Info/VBoxContainer4"]
+layout_mode = 2
+texture = ExtResource("5_mbskr")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Info/VBoxContainer4"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 0
+text = "Probability Distrubution Graph; y = probability of losing x amount at layer 9."
+fit_content = true
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
