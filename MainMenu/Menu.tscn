@@ -156,4 +156,38 @@ size_flags_horizontal = 4
 theme = ExtResource("4_gtolh")
 text = "Play"
 
+[node name="Info" type="ColorRect" parent="."]
+visible = false
+offset_left = 188.0
+offset_top = 112.0
+offset_right = 966.0
+offset_bottom = 610.0
+color = Color(0.273873, 0.273873, 0.273873, 1)
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Info"]
+offset_left = 45.0
+offset_top = 26.0
+offset_right = 494.0
+offset_bottom = 66.0
+theme_override_constants/separation = 32
+
+[node name="Label" type="RichTextLabel" parent="Info/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "How to play"
+fit_content = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Info/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 0
+text = "Step 1
+Place a bet, for every 100 (higher bets will have higher possible rewards)
+
+Step 2 
+Choose your risk (higher risk = more additives)
+
+Step 3
+Press play and test your luck!"
+fit_content = true
+
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
