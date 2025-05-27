@@ -13,15 +13,18 @@ config_version=5
 config/name="InfiniPlinko"
 run/main_scene="uid://dcbiwpsxsuipw"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/bg_color=Color(0.376471, 0.490196, 0.541176, 1)
+boot_splash/image="uid://bo3lrgctksqvv"
 config/icon="res://icon.svg"
 
 [display]
 
 window/stretch/mode="viewport"
-window/stretch/aspect="keep_height"
+window/stretch/aspect="keep_width"
 
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.376471, 0.490196, 0.545098, 1)
