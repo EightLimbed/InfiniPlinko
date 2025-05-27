@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://beoppwroo14qg" path="res://Ball/GolfBall/Pegs.png" id="1_nuv2b"]
 [ext_resource type="Texture2D" uid="uid://ce7gplxnp5o82" path="res://Background/Background1.png" id="2_o5td3"]
 [ext_resource type="Theme" uid="uid://cotiscxf60nq3" path="res://MainMenu/Menu.tres" id="4_gtolh"]
-[ext_resource type="Texture2D" uid="uid://ceyvk1bak8h6b" path="res://InfoGraphics/GraphExample.png" id="5_mbskr"]
 [ext_resource type="Texture2D" uid="uid://c3td28y3kovd0" path="res://InfoGraphics/realistic-calculator_1078-241.png" id="5_mom6m"]
 [ext_resource type="Texture2D" uid="uid://qkl0pvxqkmug" path="res://InfoGraphics/Desmos (1).png" id="6_y01f2"]
+[ext_resource type="Texture2D" uid="uid://du3j57pgfr4kv" path="res://InfoGraphics/SheetsGraph.png" id="7_mom6m"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jefjr"]
 font_size = 96
@@ -145,7 +145,6 @@ theme = ExtResource("4_gtolh")
 text = "Play"
 
 [node name="Info" type="ColorRect" parent="."]
-visible = false
 offset_left = 132.0
 offset_top = 27.0
 offset_right = 1037.0
@@ -306,63 +305,30 @@ scale = Vector2(0.173333, 0.153611)
 texture = ExtResource("6_y01f2")
 
 [node name="Probability Distrubution" type="ColorRect" parent="Info"]
-visible = false
 layout_mode = 0
-offset_left = -125.0
-offset_top = 13.0
-offset_right = 475.0
-offset_bottom = 591.0
+offset_left = -121.0
+offset_top = 131.0
+offset_right = 526.0
+offset_bottom = 576.0
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect" type="ColorRect" parent="Info/Probability Distrubution"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 590.0
-offset_bottom = 568.0
-color = Color(0.418826, 0.533361, 0.591038, 1)
-
-[node name="Probability Distrubutions" type="VBoxContainer" parent="Info/Probability Distrubution/ColorRect"]
-layout_mode = 0
-offset_top = -9.0
-offset_right = 580.0
-offset_bottom = 561.0
-theme_override_constants/separation = 465
-alignment = 1
-
-[node name="Label" type="Label" parent="Info/Probability Distrubution/ColorRect/Probability Distrubutions"]
+[node name="TextureRect" type="TextureRect" parent="Info/Probability Distrubution"]
 layout_mode = 2
-theme = ExtResource("4_gtolh")
-theme_override_colors/font_color = Color(0.780392, 0.819608, 0.839216, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 45
-text = "Probability Distrubution"
-horizontal_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="Info/Probability Distrubution/ColorRect/Probability Distrubutions/Label"]
-layout_mode = 2
-offset_top = 64.0
-offset_right = 1158.0
-offset_bottom = 986.0
+offset_left = 7.0
+offset_top = 9.0
+offset_right = 1267.0
+offset_bottom = 863.0
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_mbskr")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Info/Probability Distrubution/ColorRect/Probability Distrubutions"]
-layout_mode = 2
-theme_override_font_sizes/normal_font_size = 20
-text = "y = probability of changing value by x amount at layer 9."
-fit_content = true
-horizontal_alignment = 1
+texture = ExtResource("7_mom6m")
 
 [node name="InfoButton" type="Button" parent="."]
-offset_left = 4.0
-offset_top = 572.0
-offset_right = 150.0
+offset_left = 2.0
+offset_top = 586.0
+offset_right = 117.0
 offset_bottom = 647.0
 size_flags_horizontal = 4
 theme = ExtResource("4_gtolh")
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 35
 toggle_mode = true
 text = "  Info  "
 
