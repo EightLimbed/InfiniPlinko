@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b04pk37rapsfe"
-path="res://.godot/imported/Example Probabilty Graph.png-a8975591643d2935eff150711f71e962.ctex"
+uid="uid://bst8v7i8kv37v"
+path="res://.godot/imported/DistrubutionGraph.png-2b6f9359e859f110ea49361255a34c07.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://InfoGraphics/Example Probabilty Graph.png"
-dest_files=["res://.godot/imported/Example Probabilty Graph.png-a8975591643d2935eff150711f71e962.ctex"]
+source_file="res://InfoGraphics/DistrubutionGraph.png"
+dest_files=["res://.godot/imported/DistrubutionGraph.png-2b6f9359e859f110ea49361255a34c07.ctex"]
 
 [params]
 

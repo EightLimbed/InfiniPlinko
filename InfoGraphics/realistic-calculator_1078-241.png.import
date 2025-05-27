@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnacf7p4v71j5"
-path="res://.godot/imported/Graph.png-73dd3043e1ab0930b1ec2fee6c6796be.ctex"
+uid="uid://c3td28y3kovd0"
+path="res://.godot/imported/realistic-calculator_1078-241.png-819a57e875a22ce10b5c645b222018b5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://InfoGraphics/Graph.png"
-dest_files=["res://.godot/imported/Graph.png-73dd3043e1ab0930b1ec2fee6c6796be.ctex"]
+source_file="res://InfoGraphics/realistic-calculator_1078-241.png"
+dest_files=["res://.godot/imported/realistic-calculator_1078-241.png-819a57e875a22ce10b5c645b222018b5.ctex"]
 
 [params]
 
