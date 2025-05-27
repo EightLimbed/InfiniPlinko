@@ -54,6 +54,7 @@ offset_right = 792.0
 offset_bottom = 644.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_gtolh")
 texture = ExtResource("1_nuv2b")
 stretch_mode = 1
 flip_h = true
@@ -144,6 +145,7 @@ theme = ExtResource("4_gtolh")
 text = "Play"
 
 [node name="Info" type="ColorRect" parent="."]
+visible = false
 offset_left = 132.0
 offset_top = 27.0
 offset_right = 1037.0
@@ -152,7 +154,7 @@ color = Color(0.245832, 0.338376, 0.436925, 1)
 
 [node name="Bg" type="ColorRect" parent="Info"]
 layout_mode = 0
-offset_left = 463.0
+offset_left = 488.0
 offset_top = -1.0
 offset_right = 909.0
 offset_bottom = 529.0
@@ -161,7 +163,7 @@ color = Color(0.609131, 0.70718, 0.816694, 1)
 [node name="Your Chances" type="VBoxContainer" parent="Info/Bg"]
 layout_mode = 0
 offset_left = 2.0
-offset_right = 441.0
+offset_right = 416.0
 offset_bottom = 894.0
 theme_override_constants/separation = 8
 
@@ -180,7 +182,7 @@ theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.258824, 0.839216, 0.258824, 1)
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/normal_font_size = 17
-text = "Example: 
+text = "EXAMPLE: 
 Bet amount = $40
 Tokens Spent = 4
 # of bounces = 20
@@ -259,14 +261,15 @@ offset_top = 4.0
 offset_right = 388.0
 offset_bottom = 80.0
 theme = ExtResource("4_gtolh")
-theme_override_colors/default_color = Color(0, 0.596512, 3.85046e-07, 1)
+theme_override_colors/default_color = Color(6.9188e-08, 0.183131, 3.00817e-07, 1)
 theme_override_colors/font_outline_color = Color(0.00392157, 0, 0.00392157, 1)
-theme_override_constants/outline_size = 3
-theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/normal_font_size = 15
 text = "
-Calculations:
-[MAX WIN = -0.03125+40+180+680+2500+9220+34300+129000+486000+1850000]
-[MAX LOSS = -0.03125-13-18.-19.428-19.841-19.956-19.9883-19.996-19.999-19.999]
+Example Calculations:
+[MAX WIN = -0.03125+40+180+680+2500+9220+34300+129000+486000+1850000] (sum of highest possible additives for each layer)
+
+[MAX LOSS = -0.03125-13-18.-19.428-19.841-19.956-19.9883-19.996-19.999-19.999] (sum of lowest posisble additives for each layer)
+
 [Expected value = 40 - 0.0625(average loss) * 10 (Amount of additives in 20 bounces)]"
 
 [node name="ColorRect" type="ColorRect" parent="Info/Calc"]
@@ -287,7 +290,7 @@ theme_override_font_sizes/font_size = 25
 text = "Desmos Demonstration"
 uri = "https://www.desmos.com/calculator/ybqo64kkp4"
 
-[node name="Button" type="Button" parent="Info/Calc"]
+[node name="Graph Button" type="Button" parent="Info/Calc"]
 layout_mode = 0
 offset_left = 182.0
 offset_top = 103.0
@@ -305,46 +308,64 @@ texture = ExtResource("6_y01f2")
 [node name="Probability Distrubution" type="ColorRect" parent="Info"]
 visible = false
 layout_mode = 0
-offset_left = 360.0
-offset_top = -70.0
-offset_right = 969.0
-offset_bottom = 525.0
-color = Color(0.221517, 0.302538, 0.341447, 1)
+offset_left = -125.0
+offset_top = 13.0
+offset_right = 475.0
+offset_bottom = 591.0
+color = Color(0, 0, 0, 1)
 
-[node name="Probability Distrubutions" type="VBoxContainer" parent="Info/Probability Distrubution"]
+[node name="ColorRect" type="ColorRect" parent="Info/Probability Distrubution"]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 3.0
-offset_right = 609.0
-offset_bottom = 585.0
-theme_override_constants/separation = 490
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 590.0
+offset_bottom = 568.0
+color = Color(0.418826, 0.533361, 0.591038, 1)
+
+[node name="Probability Distrubutions" type="VBoxContainer" parent="Info/Probability Distrubution/ColorRect"]
+layout_mode = 0
+offset_top = -9.0
+offset_right = 580.0
+offset_bottom = 561.0
+theme_override_constants/separation = 465
 alignment = 1
 
-[node name="Label" type="Label" parent="Info/Probability Distrubution/Probability Distrubutions"]
+[node name="Label" type="Label" parent="Info/Probability Distrubution/ColorRect/Probability Distrubutions"]
 layout_mode = 2
 theme = ExtResource("4_gtolh")
 theme_override_colors/font_color = Color(0.780392, 0.819608, 0.839216, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 45
 text = "Probability Distrubution"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Info/Probability Distrubution/Probability Distrubutions/Label"]
+[node name="TextureRect" type="TextureRect" parent="Info/Probability Distrubution/ColorRect/Probability Distrubutions/Label"]
 layout_mode = 2
-offset_left = 21.0
-offset_top = 69.0
-offset_right = 1161.0
-offset_bottom = 1045.0
+offset_top = 64.0
+offset_right = 1158.0
+offset_bottom = 986.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_mbskr")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Info/Probability Distrubution/Probability Distrubutions"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Info/Probability Distrubution/ColorRect/Probability Distrubutions"]
 layout_mode = 2
-theme_override_constants/outline_size = 3
-theme_override_font_sizes/normal_font_size = 0
+theme_override_font_sizes/normal_font_size = 20
 text = "y = probability of changing value by x amount at layer 9."
 fit_content = true
 horizontal_alignment = 1
 
+[node name="InfoButton" type="Button" parent="."]
+offset_left = 4.0
+offset_top = 572.0
+offset_right = 150.0
+offset_bottom = 647.0
+size_flags_horizontal = 4
+theme = ExtResource("4_gtolh")
+theme_override_font_sizes/font_size = 45
+toggle_mode = true
+text = "  Info  "
+
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Info/Calc/Graph Button" to="." method="_on_graph_button_pressed"]
+[connection signal="pressed" from="InfoButton" to="." method="_on_info_button_pressed"]
