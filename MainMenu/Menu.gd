@@ -1,6 +1,5 @@
 extends CanvasLayer
-@onready var Graph = $"Info/Probability Distrubution"
-@onready var info = $Info
+
 func _on_button_pressed() -> void:
 	if str($VBoxContainer/Label3/TextEdit.text).is_valid_int():
 		var instance = load("res://Main/Game.tscn").instantiate()
@@ -11,18 +10,16 @@ func _on_button_pressed() -> void:
 
 
 func _on_info_button_pressed() -> void:
-	info.visible = not info.visible
-	if info.visible == true:
-		$InfoButton.text = "Home"
+	$Info.visible = not $Info.visible
+	if $Info.visible == true:
+		$InfoButton.text = "Close"
 	else:
 		$InfoButton.text = "Info"
 
-
 func _on_graph_button_pressed() -> void:
-	Graph.visible = not Graph.visible
-	if Graph.visible == true:
-		$"Info/Calc/Graph Button".text = "Back"
-		$InfoButton.visible = false
+	if $Info/Calculator.position.y > 0:
+		$Info/Calculator/GraphButton.text = "Close"
+		$Info/AnimationPlayer.play("CalculatorAppear")
 	else:
-		$"Info/Calc/Graph Button".text = "Probability Distrubution Example"
-		$InfoButton.visible = true
+		$Info/Calculator/GraphButton.text = "Example Calculation"
+		$Info/AnimationPlayer.play("CalculatorDissapear")
