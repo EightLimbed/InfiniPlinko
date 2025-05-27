@@ -8,7 +8,6 @@ func _on_button_pressed() -> void:
 		get_tree().root.add_child(instance)
 		queue_free()
 
-
 func _on_info_button_pressed() -> void:
 	$Info.visible = not $Info.visible
 	if $Info.visible == true:

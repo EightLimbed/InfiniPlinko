@@ -1,16 +1,15 @@
 extends CanvasLayer
 
 @onready var game = get_parent().get_parent()
+var save_file = preload("res://Save/SavedGames.tres")
 
 func win(value):
 	show()
-	if not ResourceLoader.exists("user://save/SavedGames.tres"):
-		ResourceSaver.save(ResourceLoader.load("res://Save/SavedGames.tres"),"user://save/SavedGames.tres")
-		print("created")
-	var old_save = ResourceLoader.load("user://save/SavedGames.tres")
-	old_save.saved_bets.append(game.bet)
-	old_save.saved_profits.append(round(value*100.0)/100.0-game.bet)
-	ResourceSaver.save(old_save,"user://save/SavedGames.tres")
+	if ResourceLoader.exists("user://SavedGames.tres"):
+		save_file = ResourceLoader.load("user://SavedGames.tres")
+	save_file.saved_bets.append(game.bet)
+	save_file.saved_profits.append(round(value*100.0)/100.0-game.bet)
+	ResourceSaver.save(save_file,"user://SavedGames.tres")
 	if value < 0:
 		$VBoxContainer/Label3.text = "Shucks! You Lost $"+str(abs(round(value*100.0)/100.0)-game.bet)
 	else:
