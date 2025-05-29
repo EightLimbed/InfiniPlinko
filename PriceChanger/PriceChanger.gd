@@ -28,7 +28,8 @@ func _process(_delta: float) -> void:
 	$Label.position = Vector2(-40,-67)
 
 func val_from_pos(pos):
-	return game.bet*nCr(pos.y,(abs(abs(pos.x)-(pos.y+1)*(sign(pos.x)+1)/2))-0.5)/(nCr(pos.y,abs(pos.x)+(pos.y/2.0)))-game.bet-game.loss/2**pos.y
+	#return -game.loss
+	return game.bet*nCr(pos.y,(abs(abs(pos.x)-(pos.y+1)*(sign(pos.x)+1)/2))-0.5)/(nCr(pos.y,abs(pos.x)+(pos.y/2.0)))-game.bet-game.loss
 
 func nCr(n, r) -> float:
 	return factorial(n) / (factorial(r) * factorial(n - r))
