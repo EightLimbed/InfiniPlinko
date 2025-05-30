@@ -10,9 +10,8 @@ size = Vector2(64, 64)
 [node name="Ball" type="AnimatedSprite2D"]
 sprite_frames = ExtResource("1_ov5dl")
 animation = &"Right"
-frame = 8
 frame_progress = 1.0
-speed_scale = 100000.0
+speed_scale = 100.0
 script = ExtResource("1_cfgdn")
 
 [node name="Pegs" type="TextureRect" parent="."]

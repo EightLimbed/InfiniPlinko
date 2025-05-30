@@ -1,52 +1,12 @@
-[gd_resource type="SpriteFrames" load_steps=18 format=3 uid="uid://dcsacu0tdxb40"]
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://dcsacu0tdxb40"]
 
 [ext_resource type="Texture2D" uid="uid://s858vlmlvltk" path="res://Ball/GolfBall/GolfBall.png" id="1_26h54"]
-[ext_resource type="Texture2D" uid="uid://ctpue6b778r2k" path="res://Ball/GolfBall/GolfBallL2.png" id="2_lao8b"]
-[ext_resource type="Texture2D" uid="uid://b6fo4jnhfm0jl" path="res://Ball/GolfBall/GolfBallL3.png" id="3_sh0ic"]
-[ext_resource type="Texture2D" uid="uid://rsqmpsqwepta" path="res://Ball/GolfBall/GolfBallL4.png" id="4_m4yft"]
-[ext_resource type="Texture2D" uid="uid://bebhklebjfx6j" path="res://Ball/GolfBall/GolfBallL5.png" id="5_d63tt"]
-[ext_resource type="Texture2D" uid="uid://d4a3g7xhkw2wy" path="res://Ball/GolfBall/GolfBallL6.png" id="6_ngkdq"]
-[ext_resource type="Texture2D" uid="uid://bo0nfov88esxy" path="res://Ball/GolfBall/GolfBallL7.png" id="7_fskbu"]
-[ext_resource type="Texture2D" uid="uid://pvtdrnfx2r6c" path="res://Ball/GolfBall/GolfBallL8.png" id="8_mbeth"]
-[ext_resource type="Texture2D" uid="uid://cn313a4w61j0g" path="res://Ball/GolfBall/GolfBallL9.png" id="9_dia8m"]
-[ext_resource type="Texture2D" uid="uid://dso2tgwdcfw3k" path="res://Ball/GolfBall/GolfBallR2.png" id="10_6kig1"]
-[ext_resource type="Texture2D" uid="uid://olqgoy0i7q02" path="res://Ball/GolfBall/GolfBallR3.png" id="11_c0aae"]
-[ext_resource type="Texture2D" uid="uid://c2s62ib5j3mjm" path="res://Ball/GolfBall/GolfBallR4.png" id="12_eh8yp"]
-[ext_resource type="Texture2D" uid="uid://6gudo7uv22u" path="res://Ball/GolfBall/GolfBallR5.png" id="13_t4epr"]
-[ext_resource type="Texture2D" uid="uid://bnv32shmb4q38" path="res://Ball/GolfBall/GolfBallR6.png" id="14_1t8vx"]
-[ext_resource type="Texture2D" uid="uid://dv5hossvmye8g" path="res://Ball/GolfBall/GolfBallR7.png" id="15_ulxrk"]
-[ext_resource type="Texture2D" uid="uid://dorp54cgho2bn" path="res://Ball/GolfBall/GolfBallR8.png" id="16_0ocak"]
-[ext_resource type="Texture2D" uid="uid://ddnxov365dgwk" path="res://Ball/GolfBall/GolfBallR9.png" id="17_x4271"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_26h54")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_lao8b")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_sh0ic")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_m4yft")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_d63tt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_ngkdq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_fskbu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_mbeth")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_dia8m")
 }],
 "loop": false,
 "name": &"Left",
@@ -55,32 +15,8 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_26h54")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_6kig1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_c0aae")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_eh8yp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_t4epr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_1t8vx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_ulxrk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_0ocak")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_x4271")
 }],
 "loop": false,
 "name": &"Right",
-"speed": 24.0
+"speed": 120.0
 }]

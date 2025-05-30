@@ -14,7 +14,7 @@ func win(value):
 		$VBoxContainer/Label3.text = "Shucks! You Lost $"+str(abs(round(value*100.0)/100.0)-game.bet)
 	else:
 		$VBoxContainer/Label3.text = "Wow! You Made $"+str(round(value*100.0)/100.0-game.bet)
-	if save_file.saved_bets.size() < 1000:
+	if save_file.saved_bets.size() < 10000:
 		get_tree().change_scene_to_file("res://MainMenu/Menu.tscn")
 		game.queue_free()
 		print(save_file.saved_bets.size())
