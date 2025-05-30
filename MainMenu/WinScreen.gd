@@ -8,7 +8,7 @@ func win(value):
 	if ResourceLoader.exists("user://SavedGames.tres"):
 		save_file = ResourceLoader.load("user://SavedGames.tres")
 	save_file.saved_bets.append(game.bet)
-	save_file.saved_profits.append(abs(round(value*100.0)/100.0)-game.bet)
+	save_file.saved_profits.append(abs(round(value*100.0)/100.0))
 	ResourceSaver.save(save_file,"user://SavedGames.tres")
 	if abs(value)-game.bet < 0:
 		$VBoxContainer/Label3.text = "Shucks! You Lost $"+str(abs(round(value*100.0)/100.0)-game.bet)
