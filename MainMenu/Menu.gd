@@ -1,5 +1,15 @@
 extends CanvasLayer
 
+func _ready():
+	call_deferred("start")
+
+func start():
+	var instance = load("res://Main/Game.tscn").instantiate()
+	instance.bet = 40
+	instance.risk = 5
+	get_tree().root.add_child(instance)
+	queue_free()
+
 func _on_button_pressed() -> void:
 	if str($VBoxContainer/Label3/TextEdit.text).is_valid_int():
 		var instance = load("res://Main/Game.tscn").instantiate()
