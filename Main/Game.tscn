@@ -14,7 +14,7 @@ outline_color = Color(0, 0, 0, 1)
 script = ExtResource("1_1js7q")
 
 [node name="Ball" parent="." instance=ExtResource("1_gdh3y")]
-frame = 0
+frame_progress = 0.0
 
 [node name="Background" parent="." instance=ExtResource("2_mydax")]
 
