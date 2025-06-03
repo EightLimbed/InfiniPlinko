@@ -339,7 +339,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0, 1, 1, 1)
 theme_override_font_sizes/font_size = 25
 text = "Desmos Demonstration"
-uri = "https://www.desmos.com/calculator/mlpmq2gdoj"
+uri = "https://www.desmos.com/calculator/lyejav94yp"
 
 [node name="DesmosLogo" type="TextureRect" parent="Info/Calculator"]
 layout_mode = 0
