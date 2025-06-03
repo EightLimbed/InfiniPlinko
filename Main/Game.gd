@@ -4,10 +4,8 @@ var price_changer : PackedScene = preload("res://PriceChanger/PriceChanger.tscn"
 var random = RandomNumberGenerator.new()
 var risk : int
 var bet : float
-var loss : float
 
 func _ready():
-	loss = bet/float(min(max(16,round(bet/2)),999))/10.0
 	$CanvasLayer/WinScreen.hide()
 	gen_triangle(Vector2.ZERO)
 
